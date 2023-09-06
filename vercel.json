@@ -1,0 +1,6 @@
+{
+    "routes": [
+      { "src": "/submit-form", "dest": "index.js" }
+    ]
+  }
+  
