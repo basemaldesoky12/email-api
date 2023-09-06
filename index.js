@@ -8,14 +8,12 @@ const port = 4000; // Change this to your desired port
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors({
-    origin: '*'
-}));
+app.use(cors());
 
 // Set your SendinBlue API key
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
 const apiKey = defaultClient.authentications['api-key'];
-apiKey.apiKey = process.env.SENDINBLUE_API_KEY;
+apiKey.apiKey = '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';
 
 app.post('/submit-form', (req, res) => {
     const { name, email, message } = req.body;
