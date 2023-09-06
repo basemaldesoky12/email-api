@@ -9,6 +9,11 @@ const port = 4000; // Change this to your desired port
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+});
+
 
 // Set your SendinBlue API key
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
