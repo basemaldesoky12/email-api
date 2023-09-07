@@ -13,7 +13,7 @@ app.use(cors());
 // Set your SendinBlue API key
 const defaultClient = SibApiV3Sdk.ApiClient.instance;
 const apiKey = defaultClient.authentications['api-key'];
-apiKey.apiKey = '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';
+apiKey.apiKey = process.env.API_KEY;
 
 app.post('/submit-form', (req, res) => {
     const { name, email, message } = req.body;
